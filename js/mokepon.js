@@ -38,3 +38,25 @@ botonMascotaJugador.addEventListener('click',()=>{
 function aleatorio(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + 1);
 }
+
+/* 
+PROGRAMANDO BOTONES DE ATAQUE
+- definiendo variable global ataqueJugador
+- accediendo a los botones y programandolos
+*/
+let ataqueJugador;
+let botonAgua = document.getElementById('boton-agua');
+botonAgua.addEventListener('click', () => {
+  ataqueJugador = "AGUA";
+  alert(ataqueJugador);
+})
+let botonFuego = document.getElementById('boton-fuego');
+botonFuego.addEventListener('click', () => {
+  ataqueJugador = "FUEGO";
+  alert(ataqueJugador);
+})
+let botonTierra = document.getElementById('boton-tierra');
+botonTierra.addEventListener('click', () => {
+  ataqueJugador = "TIERRA";
+  alert(ataqueJugador);
+})
