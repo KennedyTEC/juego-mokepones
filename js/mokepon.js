@@ -7,11 +7,17 @@ PROGRAMANDO EL BOTON SELECCIONAR
 let botonMascotaJugador = document.getElementById('boton-mascota');
 botonMascotaJugador.addEventListener('click',()=>{
   let listaMascotas = document.getElementsByName('mascota');
-  let nombreMascota = "Selecciona una mascota";
+  let nombreMascota = "";
   for (let i = 0; i < listaMascotas.length; i++) {
     if (listaMascotas[i].checked == true) {
-      nombreMascota = listaMascotas[i].value
+      nombreMascota = listaMascotas[i].value;
     }
   }
-  alert(nombreMascota)
+  
+  let spanMascota = document.getElementById('mascota-jugador');
+  if (nombreMascota != "") {
+    spanMascota.innerHTML = nombreMascota;
+  } else {
+    alert("Selecciona una mascota");
+  }
 })
