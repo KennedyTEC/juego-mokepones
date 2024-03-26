@@ -1,10 +1,17 @@
 /*
 PROGRAMANDO EL BOTON SELECCIONAR
-- obtengo la lista de los inputs
+- obtengo la lista de los inputs y botones de ataque
 - recorro la lista y corroboro que haya un input seleccionado
 - de haber uno, imprimo su value, de lo contrario, se muestra 'Selecciona una mascota'
 - además, elige una mascota enemiga aleatoriamente
 */
+let botonFuego = document.getElementById('boton-fuego');
+botonFuego.disabled = true;
+let botonAgua = document.getElementById('boton-agua');
+botonAgua.disabled = true;
+let botonTierra = document.getElementById('boton-tierra');
+botonTierra.disabled = true;
+
 let botonMascotaJugador = document.getElementById('boton-mascota');
 botonMascotaJugador.addEventListener('click',()=>{
   let listaMascotas = document.getElementsByName('mascota');
@@ -28,6 +35,10 @@ botonMascotaJugador.addEventListener('click',()=>{
     } else {
       spanMascotaEnemigo.innerHTML = "Ratigüeya"
     }
+    //habilitando los botones de ataque
+    botonFuego.disabled = false;
+    botonAgua.disabled = false;
+    botonTierra.disabled = false;
   } else {
     alert("Selecciona una mascota");
   }
@@ -46,17 +57,17 @@ PROGRAMANDO BOTONES DE ATAQUE
 */
 let ataqueJugador;
 let ataqueEnemigo;
-let botonFuego = document.getElementById('boton-fuego');
+
 botonFuego.addEventListener('click', () => {
   ataqueJugador = "FUEGO";
   ataqueEnemigoAleatorio();
 })
-let botonAgua = document.getElementById('boton-agua');
+
 botonAgua.addEventListener('click', () => {
   ataqueJugador = "AGUA";
   ataqueEnemigoAleatorio();
 })
-let botonTierra = document.getElementById('boton-tierra');
+
 botonTierra.addEventListener('click', () => {
   ataqueJugador = "TIERRA";
   ataqueEnemigoAleatorio();
