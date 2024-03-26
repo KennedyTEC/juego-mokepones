@@ -80,6 +80,23 @@ function crearMensaje() {
   let mensaje = document.getElementById('mensajes');
   mensaje.innerHTML = "";
   let paragraph = document.createElement('p');
-  paragraph.innerHTML = `Tu mascota atacó con ${ataqueJugador}.\nLa mascota del enemigo atacó con ${ataqueEnemigo}`
+  paragraph.innerHTML = `Tu mascota atacó con ${ataqueJugador}.<br>
+  La mascota del enemigo atacó con ${ataqueEnemigo}<br>
+  ${combate()}`
   mensaje.appendChild(paragraph);
+}
+
+//funcion para mostrar resultado de los ataques
+function combate() {
+  if (ataqueJugador == ataqueEnemigo) {
+    return "EMPATE";
+  } else if(ataqueJugador == "FUEGO" && ataqueEnemigo == "TIERRA") {
+    return "GANASTE";
+  } else if(ataqueJugador == "AGUA" && ataqueEnemigo == "FUEGO") {
+    return "GANASTE";
+  } else if(ataqueJugador == "TIERRA" && ataqueEnemigo == "AGUA") {
+    return "GANASTE";
+  } else {
+    return "PERDISTE";
+  }
 }
