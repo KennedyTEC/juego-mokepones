@@ -6,11 +6,27 @@ PROGRAMANDO EL BOTON SELECCIONAR
 - además, elige una mascota enemiga aleatoriamente
 */
 let botonFuego = document.getElementById('boton-fuego');
-botonFuego.disabled = true;
 let botonAgua = document.getElementById('boton-agua');
-botonAgua.disabled = true;
 let botonTierra = document.getElementById('boton-tierra');
-botonTierra.disabled = true;
+
+//funciones para habilitar y deshabilitar los botones de ataque
+function habilitarAtaques() {
+  botonFuego.disabled = false;
+  botonAgua.disabled = false;
+  botonTierra.disabled = false;
+}
+function deshabilitarAtaques() {
+  botonFuego.disabled = true;
+  botonAgua.disabled = true;
+  botonTierra.disabled = true;
+}
+
+//empezar con los botones deshabilitados
+deshabilitarAtaques();
+
+//deshabilitando el boton de reiniciar
+let reinicio = document.getElementById('boton-reiniciar');
+reinicio.disabled = true;
 
 let botonMascotaJugador = document.getElementById('boton-mascota');
 botonMascotaJugador.addEventListener('click',()=>{
@@ -36,9 +52,7 @@ botonMascotaJugador.addEventListener('click',()=>{
       spanMascotaEnemigo.innerHTML = "Ratigüeya"
     }
     //habilitando los botones de ataque
-    botonFuego.disabled = false;
-    botonAgua.disabled = false;
-    botonTierra.disabled = false;
+    habilitarAtaques();
   } else {
     alert("Selecciona una mascota");
   }
@@ -111,6 +125,9 @@ function combate() {
   }
   spanVidasJugador.innerHTML = vidasJugador;
   spanVidasEnemigo.innerHTML = vidasEnemigo;
+
+  //revisar vidas
+  revisarVidas();
 }
 
 //funcion para imprimir los ataques de los jugadores
@@ -123,4 +140,27 @@ function crearMensaje() {
   La mascota del enemigo atacó con ${ataqueEnemigo}<br>
   ${resultado}`
   mensaje.appendChild(paragraph);
+}
+
+//funcion para revisar vidas
+function revisarVidas() {
+  let resultadoFinal = "";
+  if (vidasEnemigo == 0) {
+    resultadoFinal = "GANASTE 🥳";
+    deshabilitarAtaques();
+    mensajeFinal(resultadoFinal);
+  } else if (vidasJugador == 0) {
+    resultadoFinal = "PERDISTE 😢";
+    deshabilitarAtaques();
+    mensajeFinal(resultadoFinal);
+  }
+}
+
+//funcion para mostrar el resultado final del juego
+function mensajeFinal(result) {
+  let seccionFinal = document.getElementById('reiniciar');
+  let parrafo = document.createElement('p');
+  parrafo.innerHTML = result;
+  seccionFinal.appendChild(parrafo);
+  reinicio.disabled = false;
 }
