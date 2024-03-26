@@ -53,6 +53,7 @@ function aleatorio(min, max) {
 /* 
 PROGRAMANDO BOTONES DE ATAQUE
 - definiendo variable global ataqueJugador
+- definiendo variable global ataqueEnemigo
 - accediendo a los botones y programandolos
 */
 let ataqueJugador;
@@ -86,28 +87,40 @@ function ataqueEnemigoAleatorio() {
   crearMensaje();
 }
 
+//funcion para mostrar resultado de los ataques
+let resultado;
+let vidasJugador = 3;
+let vidasEnemigo = 3;
+function combate() {
+  let spanVidasJugador = document.getElementById('vidas-jugador');
+  let spanVidasEnemigo = document.getElementById('vidas-enemigo');
+  if (ataqueJugador == ataqueEnemigo) {
+    resultado = "EMPATE";
+  } else if(ataqueJugador == "FUEGO" && ataqueEnemigo == "TIERRA") {
+    resultado = "GANASTE";
+    vidasEnemigo--;
+  } else if(ataqueJugador == "AGUA" && ataqueEnemigo == "FUEGO") {
+    resultado = "GANASTE";
+    vidasEnemigo--;
+  } else if(ataqueJugador == "TIERRA" && ataqueEnemigo == "AGUA") {
+    resultado = "GANASTE";
+    vidasEnemigo--;
+  } else {
+    resultado = "PERDISTE";
+    vidasJugador--;
+  }
+  spanVidasJugador.innerHTML = vidasJugador;
+  spanVidasEnemigo.innerHTML = vidasEnemigo;
+}
+
 //funcion para imprimir los ataques de los jugadores
 function crearMensaje() {
   let mensaje = document.getElementById('mensajes');
   mensaje.innerHTML = "";
   let paragraph = document.createElement('p');
+  combate();
   paragraph.innerHTML = `Tu mascota atacó con ${ataqueJugador}.<br>
   La mascota del enemigo atacó con ${ataqueEnemigo}<br>
-  ${combate()}`
+  ${resultado}`
   mensaje.appendChild(paragraph);
-}
-
-//funcion para mostrar resultado de los ataques
-function combate() {
-  if (ataqueJugador == ataqueEnemigo) {
-    return "EMPATE";
-  } else if(ataqueJugador == "FUEGO" && ataqueEnemigo == "TIERRA") {
-    return "GANASTE";
-  } else if(ataqueJugador == "AGUA" && ataqueEnemigo == "FUEGO") {
-    return "GANASTE";
-  } else if(ataqueJugador == "TIERRA" && ataqueEnemigo == "AGUA") {
-    return "GANASTE";
-  } else {
-    return "PERDISTE";
-  }
 }
