@@ -20,10 +20,10 @@ botonMascotaJugador.addEventListener('click',()=>{
     spanMascota.innerHTML = nombreMascota;
     //MASCOTA DEL ENEMIGO
     let spanMascotaEnemigo = document.getElementById('mascota-enemigo');
-    let ataqueAleatorio = aleatorio(1, 3);
-    if (ataqueAleatorio == 1) {
+    let mascotaAleatoria = aleatorio(1, 3);
+    if (mascotaAleatoria == 1) {
       spanMascotaEnemigo.innerHTML = "Hipodoge"
-    } else if (ataqueAleatorio == 2) {
+    } else if (mascotaAleatoria == 2) {
       spanMascotaEnemigo.innerHTML = "Capipepo"
     } else {
       spanMascotaEnemigo.innerHTML = "Ratigüeya"
@@ -45,18 +45,41 @@ PROGRAMANDO BOTONES DE ATAQUE
 - accediendo a los botones y programandolos
 */
 let ataqueJugador;
-let botonAgua = document.getElementById('boton-agua');
-botonAgua.addEventListener('click', () => {
-  ataqueJugador = "AGUA";
-  alert(ataqueJugador);
-})
+let ataqueEnemigo;
 let botonFuego = document.getElementById('boton-fuego');
 botonFuego.addEventListener('click', () => {
   ataqueJugador = "FUEGO";
-  alert(ataqueJugador);
+  ataqueEnemigoAleatorio();
+})
+let botonAgua = document.getElementById('boton-agua');
+botonAgua.addEventListener('click', () => {
+  ataqueJugador = "AGUA";
+  ataqueEnemigoAleatorio();
 })
 let botonTierra = document.getElementById('boton-tierra');
 botonTierra.addEventListener('click', () => {
   ataqueJugador = "TIERRA";
-  alert(ataqueJugador);
+  ataqueEnemigoAleatorio();
 })
+
+//funcion para obtener ataque enemigo
+function ataqueEnemigoAleatorio() {
+  number = aleatorio(1, 3);
+  if (number == 1) {
+    ataqueEnemigo = "FUEGO";
+  } else if (number == 2) {
+    ataqueEnemigo = "AGUA";
+  } else {
+    ataqueEnemigo = "TIERRA";
+  }
+  crearMensaje();
+}
+
+//funcion para imprimir los ataques de los jugadores
+function crearMensaje() {
+  let mensaje = document.getElementById('mensajes');
+  mensaje.innerHTML = "";
+  let paragraph = document.createElement('p');
+  paragraph.innerHTML = `Tu mascota atacó con ${ataqueJugador}.\nLa mascota del enemigo atacó con ${ataqueEnemigo}`
+  mensaje.appendChild(paragraph);
+}
