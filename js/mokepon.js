@@ -18,20 +18,20 @@ botonMascotaJugador.addEventListener('click',()=>{
   let spanMascota = document.getElementById('mascota-jugador');
   if (nombreMascota != "") {
     spanMascota.innerHTML = nombreMascota;
+    //MASCOTA DEL ENEMIGO
+    let spanMascotaEnemigo = document.getElementById('mascota-enemigo');
+    let ataqueAleatorio = aleatorio(1, 3);
+    if (ataqueAleatorio == 1) {
+      spanMascotaEnemigo.innerHTML = "Hipodoge"
+    } else if (ataqueAleatorio == 2) {
+      spanMascotaEnemigo.innerHTML = "Capipepo"
+    } else {
+      spanMascotaEnemigo.innerHTML = "Ratigüeya"
+    }
   } else {
     alert("Selecciona una mascota");
   }
 
-  //MASCOTA DEL ENEMIGO
-  let spanMascotaEnemigo = document.getElementById('mascota-enemigo');
-  let ataqueAleatorio = aleatorio(1, 3);
-  if (ataqueAleatorio == 1) {
-    spanMascotaEnemigo.innerHTML = "Hipodoge"
-  } else if (ataqueAleatorio == 2) {
-    spanMascotaEnemigo.innerHTML = "Capipepo"
-  } else {
-    spanMascotaEnemigo.innerHTML = "Ratigüeya"
-  }
 })
 
 //funcion para obtener numeros aleatorios
