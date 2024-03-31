@@ -27,6 +27,10 @@ deshabilitarAtaques();
 //deshabilitando el boton de reiniciar
 let reinicio = document.getElementById('boton-reiniciar');
 reinicio.disabled = true;
+//funcion para reiniciar
+reinicio.addEventListener('click', () => {
+  location.reload();
+})
 
 let botonMascotaJugador = document.getElementById('boton-mascota');
 botonMascotaJugador.addEventListener('click',()=>{
