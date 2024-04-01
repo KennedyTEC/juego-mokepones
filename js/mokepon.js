@@ -9,6 +9,11 @@ let botonFuego = document.getElementById('boton-fuego');
 let botonAgua = document.getElementById('boton-agua');
 let botonTierra = document.getElementById('boton-tierra');
 
+//declarando variable global para la seccion de ataque
+let seccionAtaque = document.getElementById('seleccionar-ataque');
+//ocultando inicialmente la seccion de ataque
+seccionAtaque.style.display = 'none';
+
 //funciones para habilitar y deshabilitar los botones de ataque
 function habilitarAtaques() {
   botonFuego.disabled = false;
@@ -24,9 +29,10 @@ function deshabilitarAtaques() {
 //empezar con los botones deshabilitados
 deshabilitarAtaques();
 
-//deshabilitando el boton de reiniciar
+//ocultando el boton de reiniciar
 let reinicio = document.getElementById('boton-reiniciar');
-reinicio.disabled = true;
+// reinicio.disabled = true;
+reinicio.style.display = 'none';
 //funcion para reiniciar
 reinicio.addEventListener('click', () => {
   location.reload();
@@ -57,6 +63,12 @@ botonMascotaJugador.addEventListener('click',()=>{
     }
     //habilitando los botones de ataque
     habilitarAtaques();
+    //mostrando la seccion de seleccionar-ataque
+    //usando la variable global seccionAtaque
+    seccionAtaque.style.display = 'block';
+    //ocultando la seccion de seleccionar mascota
+    let seccionSeleccionarMascota = document.getElementById('seleccionar-mascota');
+    seccionSeleccionarMascota.style.display = 'none';
   } else {
     alert("Selecciona una mascota");
   }
@@ -166,5 +178,6 @@ function mensajeFinal(result) {
   let parrafo = document.createElement('p');
   parrafo.innerHTML = result;
   seccionFinal.appendChild(parrafo);
-  reinicio.disabled = false;
+  // reinicio.disabled = false;
+  reinicio.style.display = 'block'
 }
