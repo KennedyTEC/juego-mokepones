@@ -1,0 +1,12 @@
+.titulo {
+  text-align: center;
+  margin: 0 auto;
+}
+
+#seleccionar-mascota {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center
+}
