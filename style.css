@@ -67,3 +67,22 @@ input {
   font-family: inherit;
   margin-top: 30px;
 }
+
+/* ESTILOS PARA EL COMBATE DE MASCOTAS */
+#seleccionar-ataque {
+  /*display:flex incrustado por JS (linea 68)*/
+  border: 1px solid red;
+  flex-direction: column;
+  align-items: center;
+}
+
+#seleccionar-ataque button[id|=boton] {
+  padding: 10px;
+  box-sizing: border-box;
+  border-radius: 20px;
+  border-color: transparent;
+  width: 100px;
+  background-color: #11468F;
+  color: white;
+  font-family: inherit;
+}
