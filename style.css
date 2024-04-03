@@ -1,14 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+body {
+  font-family: 'Fredoka One', cursive;
+  background-color: #041562;
+}
+
 .titulo {
   text-align: center;
-  margin: 0 auto;
+  margin: 30px auto;
+  width: 340px;
+  height: 50px;
+  color: white;
 }
 
 #seleccionar-mascota {
-  height: 80vh;
+  height: 70vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center
+  justify-content: start; /*un pequeño cambio, para que no se vea tan abajo*/
+  align-items: center;
+}
+
+.subtitulo {
+  color: white;
+  font-size: 20px;
+}
+
+.tarjeta {
+  box-sizing: border-box;
+  display: flex;
+  gap: 10px;
 }
 
 .tarjeta-de-mokepon {
