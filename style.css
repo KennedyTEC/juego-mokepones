@@ -76,13 +76,36 @@ input {
   align-items: center;
 }
 
-#seleccionar-ataque button[id|=boton] {
+.boton-ataque {
   padding: 10px;
-  box-sizing: border-box;
   border-radius: 20px;
   border-color: transparent;
   width: 100px;
   background-color: #11468F;
   color: white;
+  font-family: inherit;
+}
+
+#mensajes {
+  background-color: #eee;
+  width: 280px;
+  height: 70px;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+#mensajes p {
+  margin: 0px;
+}
+
+#boton-reiniciar {
+  border-color: transparent;
+  color: #11468F;
   font-family: inherit;
 }

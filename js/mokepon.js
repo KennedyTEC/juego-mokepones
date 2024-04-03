@@ -148,36 +148,26 @@ function combate() {
 
 //funcion para imprimir los ataques de los jugadores
 function crearMensaje() {
-  let mensaje = document.getElementById('mensajes');
-  mensaje.innerHTML = "";
-  let paragraph = document.createElement('p');
+  let sectionMensajes = document.getElementById('resultado');
+  let ataquesDelJugador = document.getElementById('ataques-del-jugador');
+  let ataquesDelEnemigo = document.getElementById('ataques-del-enemigo');
+
   combate();
-  paragraph.innerHTML = `Tu mascota atacó con ${ataqueJugador}.<br>
-  La mascota del enemigo atacó con ${ataqueEnemigo}<br>
-  ${resultado}`
-  mensaje.appendChild(paragraph);
+
+  sectionMensajes.innerHTML = resultado;
+  ataquesDelJugador.innerHTML = ataqueJugador;
+  ataquesDelEnemigo.innerHTML = ataqueEnemigo;
 }
 
 //funcion para revisar vidas
 function revisarVidas() {
-  let resultadoFinal = "";
   if (vidasEnemigo == 0) {
-    resultadoFinal = "GANASTE 🥳";
+    resultado = "JUEGO TERMINADO. GANASTE 🥳";
     deshabilitarAtaques();
-    mensajeFinal(resultadoFinal);
+    reinicio.style.display = 'block'
   } else if (vidasJugador == 0) {
-    resultadoFinal = "PERDISTE 😢";
+    resultado = "JUEGO TERMINADO. PERDISTE 😢";
     deshabilitarAtaques();
-    mensajeFinal(resultadoFinal);
+    reinicio.style.display = 'block';
   }
-}
-
-//funcion para mostrar el resultado final del juego
-function mensajeFinal(result) {
-  let seccionFinal = document.getElementById('reiniciar');
-  let parrafo = document.createElement('p');
-  parrafo.innerHTML = result;
-  seccionFinal.appendChild(parrafo);
-  // reinicio.disabled = false;
-  reinicio.style.display = 'block'
 }
