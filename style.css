@@ -33,12 +33,23 @@ body {
 }
 
 .tarjeta-de-mokepon {
-  background-color: aquamarine;
-  height: 100px;
-  width: 100px;
+  background-color: #11468F;
+  height: 228px;
+  width: 160px;
   padding: 10px;
-  margin: 10px;
   box-sizing: border-box;
+  border-radius: 20px;
+  font-size: 20px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.tarjeta-de-mokepon img {
+  width: 140px;
 }
 
 input {
