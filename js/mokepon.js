@@ -65,7 +65,7 @@ botonMascotaJugador.addEventListener('click',()=>{
     habilitarAtaques();
     //mostrando la seccion de seleccionar-ataque
     //usando la variable global seccionAtaque
-    seccionAtaque.style.display = 'block';
+    seccionAtaque.style.display = 'flex';
     //ocultando la seccion de seleccionar mascota
     let seccionSeleccionarMascota = document.getElementById('seleccionar-mascota');
     seccionSeleccionarMascota.style.display = 'none';
