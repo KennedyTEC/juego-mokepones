@@ -31,15 +31,25 @@
     <button id="boton-mascota">Seleccionar</button>
   </section>
   <section id="seleccionar-ataque">
+    <!-- Seccion de botones de ataque -->
     <h2>Elige tu ataque:</h2>
-    <p>Tu mascota <span id="mascota-jugador"></span> tiene <span id="vidas-jugador">3</span> vidas</p>
-    <p>Tu mascota <span id="mascota-enemigo"></span> del enemigo tiene <span id="vidas-enemigo">3</span> vidas</p>
-    <button id="boton-fuego">Fuego 🔥</button>
-    <button id="boton-agua">Agua 💧</button>
-    <button id="boton-tierra">Tierra 🌱</button>
+    <div>
+      <button id="boton-fuego">Fuego 🔥</button>
+      <button id="boton-agua">Agua 💧</button>
+      <button id="boton-tierra">Tierra 🌱</button>
+    </div>
+    <!-- Seccion de mensajes y reinicio -->
+    <div>
+      <section id="mensajes"></section>
+      <section id="reiniciar">
+        <button id="boton-reiniciar">Reiniciar</button>
+      </section>
+    </div>
+    <!-- Seccion de vidas e historial de ataques -->
+    <div>
+      <p>Tu mascota <span id="mascota-jugador"></span> tiene <span id="vidas-jugador">3</span> vidas</p>
+      <p>Tu mascota <span id="mascota-enemigo"></span> del enemigo tiene <span id="vidas-enemigo">3</span> vidas</p>
+    </div>
   </section>
-  <section id="mensajes"></section>
-  <section id="reiniciar"></section>
-  <button id="boton-reiniciar">Reiniciar</button>
 </body>
 </html>
