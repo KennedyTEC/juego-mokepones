@@ -27,10 +27,9 @@ body {
   font-size: 20px;
 }
 
-.tarjeta {
-  box-sizing: border-box;
+.tarjeta, .tarjetas-ataques {
   display: flex;
-  gap: 50px;
+  gap: 5px;
 }
 
 .tarjeta-de-mokepon {
@@ -71,7 +70,6 @@ input {
 /* ESTILOS PARA LA SECCION DE MENSAJES Y REINICIO */
 #seleccionar-ataque {
   /*display:flex incrustado por JS (linea 68)*/
-  border: 1px solid red;
   flex-direction: column;
   align-items: center;
 }
@@ -80,7 +78,7 @@ input {
   padding: 10px;
   border-radius: 20px;
   border-color: transparent;
-  width: 100px;
+  width: 200px;
   background-color: #11468F;
   color: white;
   font-family: inherit;
@@ -112,10 +110,32 @@ input {
 
 /*ESTILOS PARA LA SECCION DE VIDAS E HISTORIAL DE ATAQUES*/
 .ataques {
-  border: 1px solid red;
-  box-sizing: border-box;
-  
   display: grid;
   grid-template-columns: 100px 100px;
-  text-align: center;
+  color: white;
+}
+
+#vidas-jugador, #vidas-enemigo {
+  font-size: 32px;
+  margin-bottom: 0;
+}
+
+.ataques-jugador, .ataques-enemigo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/*DISEÑO RESPONSIVO*/
+@media (max-width: 600px) {
+  .tarjeta, .tarjetas-ataques {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .tarjeta-de-mokepon {
+    flex-direction: row;
+    width: auto;
+    height: auto;
+  }
 }
