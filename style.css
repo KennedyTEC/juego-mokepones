@@ -68,7 +68,7 @@ input {
   margin-top: 30px;
 }
 
-/* ESTILOS PARA EL COMBATE DE MASCOTAS */
+/* ESTILOS PARA LA SECCION DE MENSAJES Y REINICIO */
 #seleccionar-ataque {
   /*display:flex incrustado por JS (linea 68)*/
   border: 1px solid red;
@@ -108,4 +108,14 @@ input {
   border-color: transparent;
   color: #11468F;
   font-family: inherit;
+}
+
+/*ESTILOS PARA LA SECCION DE VIDAS E HISTORIAL DE ATAQUES*/
+.ataques {
+  border: 1px solid red;
+  box-sizing: border-box;
+  
+  display: grid;
+  grid-template-columns: 100px 100px;
+  text-align: center;
 }
