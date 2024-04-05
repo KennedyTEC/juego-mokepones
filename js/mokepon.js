@@ -154,9 +154,15 @@ function crearMensaje() {
 
   combate();
 
+  let nuevoAtaqueJugador = document.createElement('p');
+  let nuevoAtaqueEnemigo = document.createElement('p');
+
+  nuevoAtaqueJugador.textContent = ataqueJugador;
+  nuevoAtaqueEnemigo.textContent = ataqueEnemigo;
+
   sectionMensajes.innerHTML = resultado;
-  ataquesDelJugador.innerHTML = ataqueJugador;
-  ataquesDelEnemigo.innerHTML = ataqueEnemigo;
+  ataquesDelJugador.appendChild(nuevoAtaqueJugador);
+  ataquesDelEnemigo.appendChild(nuevoAtaqueEnemigo);
 }
 
 //funcion para revisar vidas
