@@ -65,7 +65,13 @@ botonMascotaJugador.addEventListener('click',()=>{
     //ocultando la seccion de seleccionar mascota
     seccionSeleccionarMascota.style.display = 'none';
   } else {
-    alert("Selecciona una mascota");
+    Swal.fire ({
+      title: 'MASCOTA NO SELECCIONADA',
+      text: 'Selecciona una mascota',
+      icon: 'warning',
+      iconColor : 'red',
+      animation: 'false'
+    })
   }
 
 })
