@@ -118,9 +118,61 @@ function ataqueEnemigoAleatorio() {
 }
 
 //funcion para mostrar resultado de los ataques
+let mokepones = new Array();
 let resultado;
 let vidasJugador = 3;
 let vidasEnemigo = 3;
+let opcionDeMokepones;
+
+class Mokepon {
+  constructor (nombre, foto, vidas) {
+    this.nombre = nombre;
+    this.foto = foto;
+    this.vidas = vidas;
+    this.ataques = [];
+  }
+};
+
+let hipodoge = new Mokepon('Hipodoge', 'assets/hipodoge.png', 5);
+let capipepo = new Mokepon('Capipepo', 'assets/capipepo.png', 5);
+let ratigüeya = new Mokepon('Ratigüeya', 'assets/ratigueya.png', 5);
+
+hipodoge.ataques.push(
+  {nombre: '💧', id: 'boton-agua'},
+  {nombre: '💧', id: 'boton-agua'},
+  {nombre: '💧', id: 'boton-agua'},
+  {nombre: '🔥', id: 'boton-fuego'},
+  {nombre: '🌱', id: 'boton-tierra'}
+)
+capipepo.ataques.push(
+  {nombre: '🌱', id: 'boton-tierra'},
+  {nombre: '🌱', id: 'boton-tierra'},
+  {nombre: '🌱', id: 'boton-tierra'},
+  {nombre: '💧', id: 'boton-agua'},
+  {nombre: '🔥', id: 'boton-fuego'},
+)
+ratigüeya.ataques.push(
+  {nombre: '🔥', id: 'boton-fuego'},
+  {nombre: '🔥', id: 'boton-fuego'},
+  {nombre: '🔥', id: 'boton-fuego'},
+  {nombre: '🌱', id: 'boton-tierra'},
+  {nombre: '💧', id: 'boton-agua'},
+)
+
+mokepones.push(hipodoge, capipepo, ratigüeya);
+
+const contenedorTarjetas = document.getElementById('contenedorTarjetas');
+mokepones.forEach((mokepon) => {
+  opcionDeMokepones = `
+  <input type="radio" name="mascota" value=${mokepon.nombre} id=${mokepon.nombre.toLowerCase()}>
+    <label class="tarjeta-de-mokepon" for=${mokepon.nombre.toLowerCase()}>
+      ${mokepon.nombre}
+      <img src=${mokepon.foto} alt=${mokepon.nombre.toLowerCase()}>
+    </label>
+  `
+  contenedorTarjetas.innerHTML += opcionDeMokepones;
+})
+
 const spanVidasJugador = document.getElementById('vidas-jugador');
 const spanVidasEnemigo = document.getElementById('vidas-enemigo');
 function combate() {
