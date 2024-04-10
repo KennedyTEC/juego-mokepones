@@ -54,14 +54,9 @@ botonMascotaJugador.addEventListener('click',()=>{
   if (nombreMascota != "") {
     spanMascota.innerHTML = nombreMascota;
     //MASCOTA DEL ENEMIGO
-    let mascotaAleatoria = aleatorio(1, 3);
-    if (mascotaAleatoria == 1) {
-      spanMascotaEnemigo.innerHTML = "Hipodoge"
-    } else if (mascotaAleatoria == 2) {
-      spanMascotaEnemigo.innerHTML = "Capipepo"
-    } else {
-      spanMascotaEnemigo.innerHTML = "Ratigüeya"
-    }
+    let mascotaAleatoria = aleatorio(0, mokepones.length - 1);
+    spanMascotaEnemigo.innerHTML = mokepones[mascotaAleatoria].nombre;
+    
     //habilitando los botones de ataque
     habilitarAtaques();
     //mostrando la seccion de seleccionar-ataque
@@ -77,7 +72,7 @@ botonMascotaJugador.addEventListener('click',()=>{
 
 //funcion para obtener numeros aleatorios
 function aleatorio(min, max) {
-  return Math.floor(Math.random() * (max - min + 1) + 1);
+  return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
 /* 
