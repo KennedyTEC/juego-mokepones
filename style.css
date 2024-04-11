@@ -29,7 +29,7 @@ body {
 
 .tarjeta, .tarjetas-ataques {
   display: flex;
-  gap: 50px;
+  gap: 10px;
 }
 
 .tarjeta-de-mokepon {
@@ -91,7 +91,8 @@ input:checked + label {
   padding: 10px;
   border-radius: 20px;
   border-color: transparent;
-  width: 200px;
+  width: 180px;
+  box-sizing: border-box;
   background-color: #11468F;
   color: white;
   font-family: inherit;
