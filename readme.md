@@ -1,19 +1,11 @@
 # JUEGO DE MOKEPONES
 Sitio web interactivo donde 2 jugadores enfrentan sus mascotas (mokepones), con diferentes ataques y elementos. El que consiga más victorias gana el duelo.
 
-<style>
-  img {
-    width: 150px
-  }
-
-  .alert {
-    width: 300px
-  }
-</style>
-
-<img src='./assets/hipodoge.png' />
-<img src='./assets/capipepo.png' />
-<img src='./assets/ratigueya.png' />
+<p align='center'>
+  <img src='./assets/hipodoge.png' width='150px' />
+  <img src='./assets/capipepo.png' width='150px' />
+  <img src='./assets/ratigueya.png' width='150px' />
+</p>
 
 > [!NOTE]
 > El presente proyecto aún está en desarrollo. Se harán actualizaciones con el paso del tiempo que mejorarán el diseño, la funcionalidad y la experiencia del usuario.
@@ -21,7 +13,6 @@ Sitio web interactivo donde 2 jugadores enfrentan sus mascotas (mokepones), con 
 ## Desarrollo del juego:
 1. El usuario elige un mokepon, y la computadora selecciona el suyo aleatoriamente.  
   De no elegir un mokepon, el sitio web lanzará **una alerta** diciendo que debe elegir para empezar el juego.  
-  <img class='alert' src='./assets/juego2.png' />
   > [!IMPORTANT]
   > El código de la versión inicial del proyecto elige una mascota aleatoriamente; y también los ataques que usará. Es como si _la computadora_ fuera el contrincante.
 2. El usuario elige un ataque, y luego, "la computadora" elige aleatoriamente.
