@@ -1,0 +1,80 @@
+[
+  {
+    "id": "hipodoge",
+    "nombre": "Hipodoge",
+    "tipo": "agua",
+    "foto": "assets/hipodoge.png",
+    "ataques": [
+      {"nombre": "💧", "completo": "AGUA"},
+      {"nombre": "💧", "completo": "AGUA"},
+      {"nombre": "💧", "completo": "AGUA"},
+      {"nombre": "🔥", "completo": "FUEGO"},
+      {"nombre": "🌱", "completo": "TIERRA"}
+    ]
+  },
+  {
+    "id": "capipepo",
+    "nombre": "Capipepo",
+    "tipo": "tierra",
+    "foto": "assets/capipepo.png",
+    "ataques": [
+      {"nombre": "🌱", "completo": "TIERRA"},
+      {"nombre": "🌱", "completo": "TIERRA"},
+      {"nombre": "🌱", "completo": "TIERRA"},
+      {"nombre": "💧", "completo": "AGUA"},
+      {"nombre": "🔥", "completo": "FUEGO"}
+    ]
+  },
+  {
+    "id": "ratigueya",
+    "nombre": "Ratigüeya",
+    "tipo": "fuego",
+    "foto": "assets/ratigueya.png",
+    "ataques": [
+      {"nombre": "🔥", "completo": "FUEGO"},
+      {"nombre": "🔥", "completo": "FUEGO"},
+      {"nombre": "🔥", "completo": "FUEGO"},
+      {"nombre": "🌱", "completo": "TIERRA"},
+      {"nombre": "💧", "completo": "AGUA"}
+    ]
+  },
+  {
+    "id": "langostelvis",
+    "nombre": "Langostelvis",
+    "tipo": "fuego",
+    "foto": "assets/langostelvis.png",
+    "ataques": [
+      {"nombre": "🔥", "completo": "FUEGO"},
+      {"nombre": "🔥", "completo": "FUEGO"},
+      {"nombre": "🔥", "completo": "FUEGO"},
+      {"nombre": "🌱", "completo": "TIERRA"},
+      {"nombre": "💧", "completo": "AGUA"}
+    ]
+  },
+  {
+    "id": "pydos",
+    "nombre": "Pydos",
+    "tipo": "agua",
+    "foto": "assets/pydos.png",
+    "ataques": [
+      {"nombre": "💧", "completo": "AGUA"},
+      {"nombre": "💧", "completo": "AGUA"},
+      {"nombre": "💧", "completo": "AGUA"},
+      {"nombre": "🔥", "completo": "FUEGO"},
+      {"nombre": "🌱", "completo": "TIERRA"}
+    ]
+  },
+  {
+    "id": "tucapalma",
+    "nombre": "Tucapalma",
+    "tipo": "tierra",
+    "foto": "assets/tucapalma.png",
+    "ataques": [
+      {"nombre": "🌱", "completo": "TIERRA"},
+      {"nombre": "🌱", "completo": "TIERRA"},
+      {"nombre": "🌱", "completo": "TIERRA"},
+      {"nombre": "💧", "completo": "AGUA"},
+      {"nombre": "🔥", "completo": "FUEGO"}
+    ]
+  }
+]

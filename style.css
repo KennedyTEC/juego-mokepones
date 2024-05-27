@@ -15,7 +15,6 @@ body {
 }
 
 #seleccionar-mascota {
-  height: 70vh;
   display: flex;
   flex-direction: column;
   justify-content: start;
@@ -29,12 +28,14 @@ body {
 
 .tarjeta, .tarjetas-ataques {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 10px;
 }
 
 .tarjeta-de-mokepon {
   background-color: #11468F;
-  height: 228px;
+  height: 200px;
   width: 160px;
   padding: 10px;
   box-sizing: border-box;
@@ -45,15 +46,16 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  gap: 5px;
 }
 
 .tarjeta-de-mokepon:hover {
   box-shadow: 0px 5px white;
+  cursor: pointer;
 }
 
 .tarjeta-de-mokepon img {
-  width: 140px;
+  width: 124px;
 }
 
 input {
@@ -73,6 +75,7 @@ input:checked + label {
   color: white;
   font-family: inherit;
   margin-top: 30px;
+  cursor: pointer;
 }
 
 #boton-mascota:hover {
@@ -89,13 +92,18 @@ input:checked + label {
 
 .boton-ataque {
   padding: 10px;
-  border-radius: 20px;
+  border-radius: 50%;
   border-color: transparent;
-  width: 180px;
+  width: 80px;
+  font-size: 1.5em;
   box-sizing: border-box;
   background-color: #11468F;
-  color: white;
   font-family: inherit;
+}
+
+.boton-ataque:hover {
+  cursor: pointer;
+  border-color: #eee;
 }
 
 #mensajes {
@@ -117,9 +125,17 @@ input:checked + label {
 }
 
 #boton-reiniciar {
-  border-color: transparent;
-  color: #11468F;
+  background-color: #041562;
+  color: #eee;
+  border-radius: 10px;
   font-family: inherit;
+  font-size: 1.1em;
+  width: 120px;
+}
+
+#boton-reiniciar:hover {
+  cursor: pointer;
+  background-color: #DA1212;
 }
 
 /*ESTILOS PARA LA SECCION DE VIDAS E HISTORIAL DE ATAQUES*/
