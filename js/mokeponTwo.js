@@ -1,4 +1,10 @@
 //VARIABLES GLOBALES
+//Efectos de sonido
+const sonidoIntro = new Audio('../sound/inicio.mp3');
+const sonidoSeleccion = new Audio('../sound/seleccion.mp3');
+const sonidoCombate = new Audio('../sound/combate.mp3');
+const sonidoGanaste = new Audio('../sound/ganaste.mp3');
+const sonidoPerdiste = new Audio('../sound/perdiste.mp3');
 //Seccion de Elegir mascota
 const seccionSeleccionarMascota = document.getElementById('seleccionar-mascota');
 const contenedorTarjetas = document.getElementById('contenedorTarjetas');
@@ -23,6 +29,9 @@ const sectionMensajes = document.getElementById('resultado');
 const reinicio = document.getElementById('boton-reiniciar');
 
 //ESTILOS INICIALES
+sonidoIntro.play();
+sonidoIntro.loop = true;
+sonidoIntro.volume = 0.25;
 seccionAtaque.style.display = 'none';
 reinicio.style.display = 'none';
 
@@ -49,6 +58,14 @@ getAllMokepones(listaMokepones => {
       </label>
     `;
     contenedorTarjetas.innerHTML += opcionDeMokepones;
+    //agregar efecto de sonido
+    let mokepones = document.querySelectorAll('.tarjeta-de-mokepon');
+    mokepones.forEach(m => {
+      m.addEventListener("click", () => {
+        sonidoSeleccion.load();
+        sonidoSeleccion.play();
+      });
+    });
   }); 
 });
 //Programando el boton Seleccionar
@@ -71,7 +88,10 @@ botonMascotaJugador.addEventListener('click', () => {
     seccionSeleccionarMascota.style.display = 'none';
     seccionAtaque.style.display = 'flex';
     extraerAtaques(nombreMascota);
-    // programarAtaques();
+    sonidoIntro.pause();
+    sonidoCombate.play();
+    sonidoCombate.loop = true;
+    sonidoCombate.volume = 0.25;
   } else {
     Swal.fire ({
       title: 'MASCOTA NO SELECCIONADA',
@@ -158,13 +178,24 @@ function revisarVidas() {
   let arregloBotones = Array.from(botones);
   let botonesDeshabilitados = arregloBotones.every((b) => b.disabled == true);
   if (botonesDeshabilitados == true) {
+    sonidoCombate.pause();
     reinicio.style.display = 'block';
     if (victoriasJugador == victoriasEnemigo) {
       resultado = "EMPATE 🤜🏽🤛🏽. JUEGO TERMINADO";
     } else if (victoriasJugador > victoriasEnemigo) {
       resultado = "GANASTE 🥳. JUEGO TERMINADO";
+      sonidoGanaste.play();
+      sonidoGanaste.onended = () => {
+        sonidoIntro.load();
+        sonidoIntro.play();
+      }
     } else if (victoriasJugador < victoriasEnemigo) {
       resultado = "PERDISTE 😢. JUEGO TERMINADO";
+      sonidoPerdiste.play();
+      sonidoPerdiste.onended = () => {
+        sonidoIntro.load();
+        sonidoIntro.play();
+      }
     }
   }
 }
